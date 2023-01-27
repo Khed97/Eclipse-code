@@ -1,0 +1,6 @@
+package hierrachialInheritance;
+
+public class Cat extends animal {
+
+	
+}

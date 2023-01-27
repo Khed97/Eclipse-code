@@ -1,0 +1,10 @@
+package Inheritance;
+
+public class Rectangle {
+
+	public void area () {
+		System.out.println("Inside area");
+	}
+	
+	
+}

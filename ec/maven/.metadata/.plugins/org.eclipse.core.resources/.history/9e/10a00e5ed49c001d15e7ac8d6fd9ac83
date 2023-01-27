@@ -1,0 +1,9 @@
+package Inheritance;
+
+public class Cube {
+
+	public void volume () {
+		System.out.println("Inside volume");
+	}
+	
+}

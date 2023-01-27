@@ -1,0 +1,8 @@
+package hierrachialInheritance;
+
+public class animal {
+	public void eat () {
+	System.out.println("all animals are eating");
+	}
+	
+}

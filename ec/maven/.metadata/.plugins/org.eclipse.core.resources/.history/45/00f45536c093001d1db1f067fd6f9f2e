@@ -1,0 +1,44 @@
+
+public class Test2 {
+
+	public void NestedIfExample () {
+		System.out.println("hiii");
+		int age=17;
+		int weight=51;
+		
+		if(age>18) {
+			System.out.println("your age is ok ");
+			if(weight>50) {
+				System.out.println("You are eligible for blood donation");
+			}
+		}
+		
+	}
+	
+	public void EnhancedForLoop () {
+		String launguage [] = {"java","python","javascript","C++"};
+		
+		for(String lan:launguage) {
+			System.out.println(lan);
+		}
+	}
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Test2  T1 = new Test2 ();
+		
+//		T1.NestedIfExample();
+		T1.EnhancedForLoop();
+		
+		
+		int i=1;
+		
+		while(i<=10) {
+			System.out.println(i);
+			i++;
+		}
+		
+	}
+
+}

@@ -1,0 +1,95 @@
+package pom;
+
+import java.io.File;
+import java.io.IOException;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.Dimension;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.Point;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
+//import org.testng.annotations.BeforeMethod;
+//import org.testng.annotations.AfterMethod;
+//import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class TestClass {
+	WebDriver driver;
+	LoginPom login;
+	
+	@BeforeMethod
+	public void Hii () {
+		System.out.println("This is before method");
+	}
+	
+	@Test(enabled=false)
+	public void SelectbyIndex() throws IOException, InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();        
+//        driver.get("https://techcanvass.com/Examples/multi-select.html");
+//        driver.get("https://www.google.com/");
+		login = new LoginPom(driver);
+//		 login.SelectCarBrand();
+//		 login.clickOnGmail();
+		 login.SelectCarBrand();
+		 String title = driver.getTitle();
+//		 Assert.assertEquals(title, "hi");
+//        File s =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+//        File d = new File("C:/Users/Admin/Desktop/Screenshot/pqr.bmp");
+//        FileUtils.copyFile(s,d);
+	}
+	
+	@Test
+	public void iframeTest () throws InterruptedException {
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver(); // browser launch 
+        driver.manage().window().maximize();
+        Thread.sleep(3000);
+//        Dimension d = new Dimension(300,700);
+//        driver.manage().window().setSize(d);
+        Point p = new Point (500,800);
+        System.out.println("the values of point refrence is" + p);
+        driver.manage().window().setPosition(p);
+		driver.get("https://www.selenium.dev/selenium/docs/api/java/index.html?org/openqa/selenium/package-summary.html");
+		driver.switchTo().frame("packageFrame");
+		login = new LoginPom(driver);
+		login.clickOnActionsLink();
+		System.out.println("clicked on actions button");
+	}
+	
+	@Test
+	public void openMavenWebsite()
+	{
+		WebDriverManager.chromedriver().setup();
+		driver= new chromeDriver ();
+	}
+	@AfterMethod
+	public void hello() throws IOException {
+		System.out.println("THis is after method ");
+		File s =((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		
+		File d = new File("/home/kedar/Desktop/Screenshot/hi.png");
+				
+		FileUtils.copyFile(s, d);
+		driver.quit();
+	}
+	
+	
+//	@Test(priority=1)	
+//	public void RRun () {
+//		System.out.println("hi this is working");
+//		 login = new LoginPom(driver);
+////		 login.SelectCarBrand();
+//		 login.clickOnGmail();
+//	}
+}
+
+
+

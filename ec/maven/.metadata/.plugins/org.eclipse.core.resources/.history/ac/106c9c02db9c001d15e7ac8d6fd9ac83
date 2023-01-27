@@ -1,0 +1,5 @@
+package hierrachialInheritance;
+
+public class Dogs extends animal{
+
+}
