@@ -10,7 +10,6 @@ public class RemoveDuplicateCharacter {
 		String w = sc.next();
 		 
 		String nw = " ";
-		
 		System.out.println("Original String: "+w);
 		
 		for(int i=0;i<w.length();i++) {

@@ -24,7 +24,15 @@ public class A {
 	
 	public static void main (String[]args) {
 
-		A.HI();
+//		A.HI();
+		
+		int a,b,c;
+		a=101;
+		b=10;
+		
+		c=a%b;
+		
+		System.out.println(c);
 	}
 	
 }
